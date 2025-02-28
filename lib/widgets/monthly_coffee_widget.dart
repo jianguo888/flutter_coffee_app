@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2024 nutpi
+ * 微信公众号：nutpi
+ * All rights reserved.
+ */
+
 import 'package:flutter/material.dart';
 
 class MonthlyCoffeeWidget extends StatelessWidget {
@@ -6,7 +12,7 @@ class MonthlyCoffeeWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 50, bottom: 30),
       child: Stack(
-        overflow: Overflow.visible,
+        clipBehavior: Clip.none,
         children: [
           Container(
             padding: EdgeInsets.all(12),

@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2024 nutpi
+ * 微信公众号：nutpi
+ * All rights reserved.
+ */
+
 import 'package:flutter/material.dart';
 
 class TitleWidget extends StatelessWidget {
@@ -16,7 +22,7 @@ class TitleWidget extends StatelessWidget {
         ),
         SizedBox(width: 10),
         Text(
-          title!,
+          title ?? "",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,

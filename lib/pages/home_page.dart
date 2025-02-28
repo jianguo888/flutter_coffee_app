@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2024 nutpi
+ * 微信公众号：nutpi
+ * All rights reserved.
+ */
+
 import 'dart:ui';
 
 import '/pages/details_page.dart';

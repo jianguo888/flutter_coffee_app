@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2024 nutpi
+ * 微信公众号：nutpi
+ * All rights reserved.
+ */
+
 import 'package:flutter/material.dart';
 
 class OverviewWidget extends StatelessWidget {
@@ -18,19 +24,19 @@ class OverviewWidget extends StatelessWidget {
             color: Color(0xffFFF4E1),
             borderRadius: BorderRadius.circular(12),
           ),
-          child: Image.asset(imagePath!),
+          child: Image.asset(imagePath ?? ""),
         ),
         SizedBox(width: 15),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title!,
+              title ?? "",
               style: TextStyle(fontSize: 17),
             ),
             SizedBox(height: 8),
             Text(
-              subtitle!,
+              subtitle ?? "",
               style: TextStyle(fontSize: 14, color: Colors.black54),
             )
           ],

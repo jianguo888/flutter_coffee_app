@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2024 nutpi
+ * 微信公众号：nutpi
+ * All rights reserved.
+ */
+
 import 'dart:ui';
 
 import '/widgets/overview_widget.dart';
@@ -28,7 +34,7 @@ class DetailsPage extends StatelessWidget {
                           image: DecorationImage(
                               image: AssetImage("assets/lines.png"))),
                       child: Stack(
-                        overflow: Overflow.visible,
+                        clipBehavior: Clip.none,
                         children: [
                           Padding(
                             padding: EdgeInsets.fromLTRB(40, 60, 0, 0),

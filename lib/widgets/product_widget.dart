@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2024 nutpi
+ * 微信公众号：nutpi
+ * All rights reserved.
+ */
+
 import 'package:flutter/material.dart';
 
 class ProductWidget extends StatelessWidget {
@@ -21,7 +27,7 @@ class ProductWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 30),
       child: Stack(
-        overflow: Overflow.visible,
+        clipBehavior: Clip.none,
         children: [
           Container(
             width: double.infinity,
@@ -31,17 +37,17 @@ class ProductWidget extends StatelessWidget {
                 borderRadius: BorderRadius.only(topRight: Radius.circular(30))),
             child: Row(
               children: [
-                Image(image: AssetImage(shape!)),
+                Image(image: AssetImage(shape ?? "")),
                 SizedBox(width: 50),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(country!),
+                      Text(country ?? ""),
                       SizedBox(height: 8),
                       Text(
-                        name!,
+                        name ?? "",
                         style: TextStyle(
                             fontSize: 19, fontWeight: FontWeight.bold),
                       ),
@@ -72,8 +78,8 @@ class ProductWidget extends StatelessWidget {
           ),
           Positioned(
             child: Hero(
-              tag: heroTag!,
-              child: Image.asset(productImage!),
+              tag: heroTag ?? "",
+              child: Image.asset(productImage ?? ""),
             ),
             left: 20,
             top: -25,
