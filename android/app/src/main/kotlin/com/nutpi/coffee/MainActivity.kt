@@ -1,4 +1,4 @@
-package com.example.smarthome
+package com.nutpi.coffee
 
 import io.flutter.embedding.android.FlutterActivity
 

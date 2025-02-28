@@ -21,102 +21,103 @@ class DetailsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width,
-                height: 424,
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.45,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      width: 310,
-                      height: 424,
-                      decoration: BoxDecoration(
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        decoration: BoxDecoration(
                           color: Color(0xffF5F0E6),
                           image: DecorationImage(
                               image: AssetImage("assets/lines.png"))),
-                      child: Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(40, 60, 0, 0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                GestureDetector(
-                                    onTap: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Icon(Icons.arrow_back_ios_rounded,
-                                        size: 20)),
-                                SizedBox(height: 20),
-                                Text(
-                                  "Indonesia",
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                                SizedBox(height: 10),
-                                Text(
-                                  "Kapal Air",
-                                  style: TextStyle(
-                                      fontSize: 35,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                SizedBox(height: 15),
-                                Container(
-                                  padding: EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                      color: Color(0xffF5C168),
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: Text(
-                                    "Robusta Gold",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ),
-                                SizedBox(height: 25),
-                                Text(
-                                  "\$6.5",
-                                  style: TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ),
-                          Positioned(
-                            child: Hero(
-                                tag: "kapal",
-                                child: Image.asset("assets/pocket-kapal.png")),
-                            bottom: -70,
-                            right: -90,
-                          ),
-                          Positioned(
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 30, vertical: 20),
-                              decoration: BoxDecoration(
-                                  color: Color(0xffEC5E4F),
-                                  borderRadius: BorderRadius.circular(15)),
-                              child: Row(
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(40, 60, 0, 0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  GestureDetector(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Icon(Icons.arrow_back_ios_rounded,
+                                          size: 20)),
+                                  SizedBox(height: 20),
                                   Text(
-                                    "Add",
+                                    "Indonesia",
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    "Kapal Air",
                                     style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
+                                        fontSize: 35,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(height: 15),
+                                  Container(
+                                    padding: EdgeInsets.all(8),
+                                    decoration: BoxDecoration(
+                                        color: Color(0xffF5C168),
+                                        borderRadius: BorderRadius.circular(5)),
+                                    child: Text(
+                                      "Robusta Gold",
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                   ),
-                                  SizedBox(width: 15),
-                                  Image.asset("assets/add-to-cart.png"),
+                                  SizedBox(height: 25),
+                                  Text(
+                                    "\$6.5",
+                                    style: TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold),
+                                  )
                                 ],
                               ),
                             ),
-                            bottom: -30,
-                            left: 40,
-                          ),
-                        ],
+                            Positioned(
+                              child: Hero(
+                                  tag: "kapal",
+                                  child: Image.asset("assets/pocket-kapal.png")),
+                              bottom: -40,
+                              right: -80,
+                            ),
+                            Positioned(
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 30, vertical: 20),
+                                decoration: BoxDecoration(
+                                    color: Color(0xffEC5E4F),
+                                    borderRadius: BorderRadius.circular(15)),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "Add",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    SizedBox(width: 15),
+                                    Image.asset("assets/add-to-cart.png"),
+                                  ],
+                                ),
+                              ),
+                              bottom: -20,
+                              left: 40,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width - 310,
+                    Expanded(
+                      flex: 1,
                       child: Padding(
                         padding: EdgeInsets.only(top: 50),
                         child: Column(
@@ -141,32 +142,40 @@ class DetailsPage extends StatelessWidget {
                     SizedBox(height: 20),
                     Row(
                       children: [
-                        OverviewWidget(
-                          title: "1100-1650m",
-                          subtitle: "Altitude",
-                          imagePath: "assets/subject1.png",
+                        Expanded(
+                          child: OverviewWidget(
+                            title: "1100-1650m",
+                            subtitle: "Altitude",
+                            imagePath: "assets/subject1.png",
+                          ),
                         ),
                         SizedBox(width: 30),
-                        OverviewWidget(
-                          title: "Washed",
-                          subtitle: "Processing",
-                          imagePath: "assets/subject2.png",
+                        Expanded(
+                          child: OverviewWidget(
+                            title: "Washed",
+                            subtitle: "Processing",
+                            imagePath: "assets/subject2.png",
+                          ),
                         ),
                       ],
                     ),
                     SizedBox(height: 20),
                     Row(
                       children: [
-                        OverviewWidget(
-                          title: "Parongpong",
-                          subtitle: "Location",
-                          imagePath: "assets/subject3.png",
+                        Expanded(
+                          child: OverviewWidget(
+                            title: "Parongpong",
+                            subtitle: "Location",
+                            imagePath: "assets/subject3.png",
+                          ),
                         ),
                         SizedBox(width: 30),
-                        OverviewWidget(
-                          title: "SLN9",
-                          subtitle: "Varietal",
-                          imagePath: "assets/subject5.png",
+                        Expanded(
+                          child: OverviewWidget(
+                            title: "SLN9",
+                            subtitle: "Varietal",
+                            imagePath: "assets/subject5.png",
+                          ),
                         ),
                       ],
                     ),

@@ -116,14 +116,14 @@ class HomePage extends StatelessWidget {
                     ),
                     Center(
                       child: Container(
-                        padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             color: Colors.white),
                         child: Image(
                           image: AssetImage("assets/store.png"),
-                          width: 30,
-                          height: 30,
+                          width: MediaQuery.of(context).size.width * 0.05,
+                          height: MediaQuery.of(context).size.width * 0.05,
                         ),
                       ),
                     ),

@@ -27,19 +27,23 @@ class OverviewWidget extends StatelessWidget {
           child: Image.asset(imagePath ?? ""),
         ),
         SizedBox(width: 15),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title ?? "",
-              style: TextStyle(fontSize: 17),
-            ),
-            SizedBox(height: 8),
-            Text(
-              subtitle ?? "",
-              style: TextStyle(fontSize: 14, color: Colors.black54),
-            )
-          ],
+        Flexible(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title ?? "",
+                style: TextStyle(fontSize: 17),
+                overflow: TextOverflow.ellipsis,
+              ),
+              SizedBox(height: 8),
+              Text(
+                subtitle ?? "",
+                style: TextStyle(fontSize: 14, color: Colors.black54),
+                overflow: TextOverflow.ellipsis,
+              )
+            ],
+          ),
         )
       ],
     );

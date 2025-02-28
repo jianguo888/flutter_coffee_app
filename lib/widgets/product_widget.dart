@@ -38,31 +38,34 @@ class ProductWidget extends StatelessWidget {
             child: Row(
               children: [
                 Image(image: AssetImage(shape ?? "")),
-                SizedBox(width: 50),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(country ?? ""),
-                      SizedBox(height: 8),
-                      Text(
-                        name ?? "",
-                        style: TextStyle(
-                            fontSize: 19, fontWeight: FontWeight.bold),
-                      ),
-                      Spacer(),
-                      Text(
-                        "\$$price",
-                        style: TextStyle(
-                          color: Color(0xffE48B6C),
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
+                SizedBox(width: 20),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(country ?? ""),
+                        SizedBox(height: 8),
+                        Text(
+                          name ?? "",
+                          style: TextStyle(
+                              fontSize: 19, fontWeight: FontWeight.bold),
                         ),
-                      )
-                    ],
+                        Spacer(),
+                        Text(
+                          "$price",
+                          style: TextStyle(
+                            color: Color(0xffE48B6C),
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
+                SizedBox(width: 20),
               ],
             ),
           ),
